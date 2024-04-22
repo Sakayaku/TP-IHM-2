@@ -4,19 +4,25 @@
  */
 package Exercice2;
 
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author FRS4440A
  */
 public class Exercice2 extends javax.swing.JFrame {
-
+    private javax.swing.Timer timer;
     /**
      * Creates new form Exercice2
      */
+    
     public Exercice2() {
+        timer=new javax.swing.Timer(1000, this::timerEventHandler);
         initComponents();
+        LabelVotreMessage.setVisible(false);
+        TextFieldMessage.setVisible(false);
+        BoutonConnection.setEnabled(false);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,87 +32,312 @@ public class Exercice2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSplitPane1 = new javax.swing.JSplitPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        SplitPanen = new javax.swing.JSplitPane();
+        PanelGauche = new javax.swing.JPanel();
+        PanelLogin = new javax.swing.JPanel();
+        LabelLogin = new javax.swing.JLabel();
+        LabelPassword = new javax.swing.JLabel();
+        TextFieldLogin = new javax.swing.JTextField();
+        PasswordFieldPassword = new javax.swing.JPasswordField();
+        BoutonConnection = new javax.swing.JButton();
+        LabelTimer = new javax.swing.JLabel();
+        PanelChat = new javax.swing.JPanel();
+        ScrollPaneChat = new javax.swing.JScrollPane();
+        TextAreaChat = new javax.swing.JTextArea();
+        LabelVotreMessage = new javax.swing.JLabel();
+        TextFieldMessage = new javax.swing.JTextField();
+        PanelDroit = new javax.swing.JPanel();
+        ToolBarOptionDessin = new javax.swing.JToolBar();
+        BoutonBleu = new javax.swing.JButton();
+        BoutonRouge = new javax.swing.JButton();
+        BoutonVert = new javax.swing.JButton();
+        SeparatorOutils = new javax.swing.JToolBar.Separator();
+        BoutonTraitFin = new javax.swing.JButton();
+        BoutonTraitEpais = new javax.swing.JButton();
+        PanelDessinPartagé = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 210, Short.MAX_VALUE)
-        );
+        SplitPanen.setPreferredSize(new java.awt.Dimension(800, 518));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), "Chat"));
+        LabelLogin.setText("Login :");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 273, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 276, Short.MAX_VALUE)
-        );
+        LabelPassword.setText("Password :");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        TextFieldLogin.setText("\n");
+
+        PasswordFieldPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PasswordFieldPasswordActionPerformed(evt);
+            }
+        });
+
+        BoutonConnection.setText("Se connecter");
+        BoutonConnection.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonConnectionActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelLoginLayout = new javax.swing.GroupLayout(PanelLogin);
+        PanelLogin.setLayout(PanelLoginLayout);
+        PanelLoginLayout.setHorizontalGroup(
+            PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelLoginLayout.createSequentialGroup()
+                        .addComponent(LabelLogin)
+                        .addGap(26, 26, 26)
+                        .addComponent(TextFieldLogin))
+                    .addGroup(PanelLoginLayout.createSequentialGroup()
+                        .addComponent(LabelPassword)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PasswordFieldPassword))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginLayout.createSequentialGroup()
+                        .addComponent(LabelTimer)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BoutonConnection)))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        PanelLoginLayout.setVerticalGroup(
+            PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoginLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelLogin)
+                    .addComponent(TextFieldLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelPassword)
+                    .addComponent(PasswordFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelLoginLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(BoutonConnection))
+                    .addGroup(PanelLoginLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(LabelTimer)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        jSplitPane1.setLeftComponent(jPanel1);
+        PanelChat.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Chat"));
+        PanelChat.setFocusable(false);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 321, Short.MAX_VALUE)
+        TextAreaChat.setEditable(false);
+        TextAreaChat.setColumns(20);
+        TextAreaChat.setRows(5);
+        TextAreaChat.setEnabled(false);
+        ScrollPaneChat.setViewportView(TextAreaChat);
+
+        javax.swing.GroupLayout PanelChatLayout = new javax.swing.GroupLayout(PanelChat);
+        PanelChat.setLayout(PanelChatLayout);
+        PanelChatLayout.setHorizontalGroup(
+            PanelChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ScrollPaneChat, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 515, Short.MAX_VALUE)
+        PanelChatLayout.setVerticalGroup(
+            PanelChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ScrollPaneChat, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
         );
 
-        jSplitPane1.setRightComponent(jPanel2);
+        LabelVotreMessage.setText("Votre message :");
+        LabelVotreMessage.setEnabled(false);
+
+        TextFieldMessage.setEnabled(false);
+        TextFieldMessage.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TextFieldMessageKeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelGaucheLayout = new javax.swing.GroupLayout(PanelGauche);
+        PanelGauche.setLayout(PanelGaucheLayout);
+        PanelGaucheLayout.setHorizontalGroup(
+            PanelGaucheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelGaucheLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelGaucheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelGaucheLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(PanelChat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelGaucheLayout.createSequentialGroup()
+                        .addComponent(LabelVotreMessage)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TextFieldMessage)))
+                .addContainerGap())
+        );
+        PanelGaucheLayout.setVerticalGroup(
+            PanelGaucheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelGaucheLayout.createSequentialGroup()
+                .addComponent(PanelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelGaucheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelVotreMessage)
+                    .addComponent(TextFieldMessage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PanelChat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        SplitPanen.setLeftComponent(PanelGauche);
+
+        ToolBarOptionDessin.setRollover(true);
+
+        BoutonBleu.setBackground(new java.awt.Color(0, 0, 204));
+        BoutonBleu.setEnabled(false);
+        BoutonBleu.setFocusable(false);
+        BoutonBleu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BoutonBleu.setOpaque(true);
+        BoutonBleu.setPreferredSize(new java.awt.Dimension(20, 20));
+        BoutonBleu.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ToolBarOptionDessin.add(BoutonBleu);
+
+        BoutonRouge.setBackground(new java.awt.Color(255, 0, 0));
+        BoutonRouge.setEnabled(false);
+        BoutonRouge.setFocusable(false);
+        BoutonRouge.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BoutonRouge.setOpaque(true);
+        BoutonRouge.setPreferredSize(new java.awt.Dimension(20, 20));
+        BoutonRouge.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ToolBarOptionDessin.add(BoutonRouge);
+
+        BoutonVert.setBackground(new java.awt.Color(0, 255, 0));
+        BoutonVert.setEnabled(false);
+        BoutonVert.setFocusable(false);
+        BoutonVert.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BoutonVert.setOpaque(true);
+        BoutonVert.setPreferredSize(new java.awt.Dimension(20, 20));
+        BoutonVert.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ToolBarOptionDessin.add(BoutonVert);
+        ToolBarOptionDessin.add(SeparatorOutils);
+
+        BoutonTraitFin.setText("Trait fin");
+        BoutonTraitFin.setEnabled(false);
+        BoutonTraitFin.setFocusable(false);
+        BoutonTraitFin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BoutonTraitFin.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ToolBarOptionDessin.add(BoutonTraitFin);
+
+        BoutonTraitEpais.setText("Trait épais");
+        BoutonTraitEpais.setEnabled(false);
+        BoutonTraitEpais.setFocusable(false);
+        BoutonTraitEpais.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BoutonTraitEpais.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        ToolBarOptionDessin.add(BoutonTraitEpais);
+
+        PanelDessinPartagé.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Dessin partagé"));
+        PanelDessinPartagé.setEnabled(false);
+
+        javax.swing.GroupLayout PanelDessinPartagéLayout = new javax.swing.GroupLayout(PanelDessinPartagé);
+        PanelDessinPartagé.setLayout(PanelDessinPartagéLayout);
+        PanelDessinPartagéLayout.setHorizontalGroup(
+            PanelDessinPartagéLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        PanelDessinPartagéLayout.setVerticalGroup(
+            PanelDessinPartagéLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 496, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout PanelDroitLayout = new javax.swing.GroupLayout(PanelDroit);
+        PanelDroit.setLayout(PanelDroitLayout);
+        PanelDroitLayout.setHorizontalGroup(
+            PanelDroitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ToolBarOptionDessin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
+            .addGroup(PanelDroitLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(PanelDessinPartagé, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PanelDroitLayout.setVerticalGroup(
+            PanelDroitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDroitLayout.createSequentialGroup()
+                .addComponent(ToolBarOptionDessin, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PanelDessinPartagé, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        SplitPanen.setRightComponent(PanelDroit);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addComponent(SplitPanen, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(SplitPanen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BoutonConnectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonConnectionActionPerformed
+        // TODO add your handling code here:
+        if (BoutonConnection.getText()=="Se connecter"){
+            BoutonConnection.setText("Se déconnecter");
+            TextFieldLogin.setEnabled(false);
+            PasswordFieldPassword.setEnabled(false);
+            LabelVotreMessage.setVisible(true);
+            TextFieldMessage.setVisible(true);
+            LabelVotreMessage.setEnabled(true);
+            TextFieldMessage.setEnabled(true);
+            TextAreaChat.setEnabled(true);
+            PanelDessinPartagé.setEnabled(true);
+            BoutonBleu.setEnabled(true);
+            BoutonRouge.setEnabled(true);
+            BoutonVert.setEnabled(true);
+            BoutonTraitEpais.setEnabled(true);
+            BoutonTraitFin.setEnabled(true);
+            LabelTimer.setText("Connecté depuis 0 secondes.");
+            timer.start();
+            compteur=0;
+        }else{
+            BoutonConnection.setText("Se connecter");
+            TextFieldLogin.setEnabled(true);
+            PasswordFieldPassword.setEnabled(true);
+            LabelVotreMessage.setVisible(false);
+            TextFieldMessage.setVisible(false);
+            LabelVotreMessage.setEnabled(false);
+            TextFieldMessage.setEnabled(false);
+            TextAreaChat.setEnabled(false);
+            PanelDessinPartagé.setEnabled(false);
+            BoutonBleu.setEnabled(false);
+            BoutonRouge.setEnabled(false);
+            BoutonVert.setEnabled(false);
+            BoutonTraitEpais.setEnabled(false);
+            BoutonTraitFin.setEnabled(false);
+            timer.stop();
+            LabelTimer.setText("");
+        }
+    }//GEN-LAST:event_BoutonConnectionActionPerformed
+
+    private void PasswordFieldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordFieldPasswordActionPerformed
+        // TODO add your handling code here:
+        if (PasswordFieldPassword.getPassword().length!=0 && !(TextFieldLogin.getText().isEmpty())){
+            BoutonConnection.setEnabled(true);
+        }
+    }//GEN-LAST:event_PasswordFieldPasswordActionPerformed
+
+    private void TextFieldMessageKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TextFieldMessageKeyTyped
+        // TODO add your handling code here:
+        if ((evt.getKeyCode()== KeyEvent.VK_ENTER) && !(TextFieldMessage.getText().isEmpty())){
+            System.out.println("Test nom de dieu");
+            TextAreaChat.append(TextFieldLogin.getText()+TextFieldMessage.getText());
+            TextFieldMessage.setText("");
+        }
+    }//GEN-LAST:event_TextFieldMessageKeyTyped
+
+    private int compteur=0;
+    private void timerEventHandler (java.awt.event.ActionEvent e) {
+    //Insérer traitement
+        compteur+=1;
+        LabelTimer.setText("Connecté depuis "+compteur+" secondes.");
+    }
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -143,10 +374,28 @@ public class Exercice2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JButton BoutonBleu;
+    private javax.swing.JButton BoutonConnection;
+    private javax.swing.JButton BoutonRouge;
+    private javax.swing.JButton BoutonTraitEpais;
+    private javax.swing.JButton BoutonTraitFin;
+    private javax.swing.JButton BoutonVert;
+    private javax.swing.JLabel LabelLogin;
+    private javax.swing.JLabel LabelPassword;
+    private javax.swing.JLabel LabelTimer;
+    private javax.swing.JLabel LabelVotreMessage;
+    private javax.swing.JPanel PanelChat;
+    private javax.swing.JPanel PanelDessinPartagé;
+    private javax.swing.JPanel PanelDroit;
+    private javax.swing.JPanel PanelGauche;
+    private javax.swing.JPanel PanelLogin;
+    private javax.swing.JPasswordField PasswordFieldPassword;
+    private javax.swing.JScrollPane ScrollPaneChat;
+    private javax.swing.JToolBar.Separator SeparatorOutils;
+    private javax.swing.JSplitPane SplitPanen;
+    private javax.swing.JTextArea TextAreaChat;
+    private javax.swing.JTextField TextFieldLogin;
+    private javax.swing.JTextField TextFieldMessage;
+    private javax.swing.JToolBar ToolBarOptionDessin;
     // End of variables declaration//GEN-END:variables
 }
